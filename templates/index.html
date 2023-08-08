@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National day message</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"
+</head>
+<body>
+  <h1>National day message</h1>
+  <form methods="post">
+    Message : <input type="text" name="message" placeholder="eg. i love sg"><br>
+    <input type="submit" value="Post">
+  </form>
+  {% if message %}
+    {{ message }}
+  {% endif %}
+
+  <h2>All posts</h2>
+  {% for post in posts %} <br>
+    {{ post }}
+  {% endfor %}
+  
+</body>
+</html>
